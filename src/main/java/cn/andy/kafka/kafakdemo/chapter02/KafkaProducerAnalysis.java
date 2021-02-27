@@ -13,7 +13,8 @@ import java.util.Properties;
  * @Description:
  */
 public class KafkaProducerAnalysis {
-    public static final String brokerList = "192.168.80.100:9092";
+    //public static final String brokerList = "192.168.80.100:9092";
+    public static final String brokerList = "node01:9092,node02:9092,node03:9092";
     public static final String topic = "topic-demo";
 
     public static Properties initConfig() {
@@ -30,8 +31,17 @@ public class KafkaProducerAnalysis {
 
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,brokerList);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+        //使用自定义的序列化器CompanySerializer
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,CompanySerializer.class.getName());
         props.put(ProducerConfig.CLIENT_ID_CONFIG,"producer.client.id.demo");
+
+
+        //使用自定义的分区器
+//        props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG,DemoPartitioner.class.getName());
+
+        //使用自定义的拦截器
+//        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,ProducerInterceptorPrefix.class.getName());
         return props;
     }
 

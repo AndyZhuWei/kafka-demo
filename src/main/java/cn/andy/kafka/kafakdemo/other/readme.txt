@@ -1,0 +1,2 @@
+1.ConsumerSample、ProducerSample演示了kafka生产者和消费者
+2.kafkaSender、KafkaReceiver是在springboot下整合的代码

@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * @Author: zhuwei
  * @Date:2019/6/25 9:41
- * @Description: 自定义序列化器
+ * @Description: 自定义序列化器，对应的反序列化器参见chapter03中的CompanyDeserializer
  */
 public class CompanySerializer implements Serializer<Company> {
     @Override

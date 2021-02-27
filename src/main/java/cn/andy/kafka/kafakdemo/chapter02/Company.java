@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * @Author: zhuwei
  * @Date:2019/6/25 9:38
- * @Description:
+ * @Description: 使用了lombok
  */
 @Data
 @NoArgsConstructor
